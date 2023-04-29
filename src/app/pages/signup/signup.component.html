@@ -1,0 +1,101 @@
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-md-6 offset-md-3">
+           
+            <mat-card class="card">
+          <div class="container text-center">
+                <img style="width: 80px;padding-bottom: 10px;" src="../../../assets/membership.png" alt="">
+          </div>
+    
+          <h1 class="text-center">Register Here !!</h1>
+          
+          <!-- signup form -->
+          
+          <!-- {{user | json}} -->
+
+          <form (ngSubmit)="formSubmit()" >
+            <!-- Name field -->
+            <div class="mb-3">
+                <label 
+                      for="exampleInputEmail1" 
+                      class="form-label">
+                      Name
+                </label>
+                <input 
+                       [(ngModel)]="user.name"
+                       name="name"
+                       type="text" 
+                       class="form-control" 
+                       id="exampleInputEmail1"
+                       required>
+            </div>
+            <!-- Email Address -->
+            <div class="mb-3">
+              <label 
+                    for="exampleInputEmail1" 
+                    class="form-label">
+                    Email address
+              </label>
+              <input 
+                     type="email" 
+                     [(ngModel)]="user.email"
+                     name="email"
+                     class="form-control" 
+                     id="exampleInputEmail1"
+                     required>
+            </div>
+            <!-- Password field -->
+            <div class="mb-3">
+              <label 
+                    for="exampleInputPassword1" 
+                    class="form-label">
+                    Password
+              </label>
+              <input 
+                     [(ngModel)]="user.password"
+                     name="password"
+                    type="password" 
+                    class="form-control" 
+                    id="exampleInputPassword1"
+                    required>
+            </div>
+            <!-- About field -->
+            <div class="mb-3">
+                <label 
+                       for="exampleFormControlTextarea1" 
+                       class="form-label">
+                </label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Enter something about yourself" rows="5" name="about" [(ngModel)]="user.about" required></textarea>
+               
+              </div>
+            <!-- Terms and conditions -->
+			<div class="form-group form-check text-center" style="margin-bottom: 10px;">
+								     
+                                    <input 
+                                    type="checkbox"
+                                    name="agreement"
+                                    class="form-group-check"
+                                    id="agreement"
+                                    required
+                                     />
+                                     <label 
+                                           for="agreement"
+                                           class="form-label">
+                                           Accept Term and Conditions
+                                    </label>
+                               
+            </div>
+                               
+            <div class="button">
+                 <button class="btn btn-primary text-white" style="margin-right: 10px;"  type="submit" > Submit</button>
+                 <button class="btn btn-warning text-white" (click)="btnClickInReset()" type="reset">Reset</button>
+            </div>
+        </form>
+        
+        <a routerLink="/login" style="text-align: center;margin-top: 20px;color: #fff;" >Already Registered!! Click Here to Login</a>
+
+        </mat-card>
+    </div>
+</div>
+</div>
+
